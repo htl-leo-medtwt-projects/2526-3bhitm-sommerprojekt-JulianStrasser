@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "InstrumentSerif";
+    src: url(fonts/InstrumentSerif.ttf);
+}
+
+:root {
+    --lightGray: #645555;
+    --midGray: #9A9898;
+    --darkGray: #383434;
+}
+
+body, html {
+    margin: 0;
+}
+
+h1 {
+    font-family: "InstrumentSerif";
+    font-size: 50px;
+    color: white;
+}
+
+#header {
+    background-color: black;
+    padding-left: 20px;
+    z-index: 2;
+    position: relative;
+    height: 10vh;
+}
+
+#navigation {
+    display: block;
+    background-color: var(--lightGray);
+    height: 100vh;
+    width: 20vh;
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+
+#navigation div {
+    background-color: black;
+}
