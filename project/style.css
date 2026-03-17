@@ -3,10 +3,20 @@
     src: url(fonts/InstrumentSerif.ttf);
 }
 
+@font-face {
+    font-family: "Jaldi";
+    src: url(fonts/Jaldi.ttf);
+}
+
 :root {
-    --lightGray: #645555;
+    --lightGray: #D9D9D9;
     --midGray: #9A9898;
     --darkGray: #383434;
+    --brownishGray: #645555;
+}
+
+* {
+    font-family: "Jaldi";
 }
 
 body, html {
@@ -15,28 +25,47 @@ body, html {
 
 h1 {
     font-family: "InstrumentSerif";
-    font-size: 50px;
+    font-size: 40px;
     color: white;
+    position: absolute;
+    left: 10px;
 }
 
 #header {
     background-color: black;
-    padding-left: 20px;
     z-index: 2;
-    position: relative;
+    position: absolute;
     height: 10vh;
+    top: 0;
+    width: 100%;
 }
 
 #navigation {
     display: block;
-    background-color: var(--lightGray);
-    height: 100vh;
+    background-color: var(--darkGray);
     width: 20vh;
-    position: relative;
-    top: 0;
+    position: absolute;
+    top: 10%;
+    height: 100%;
     z-index: 1;
 }
 
 #navigation div {
     background-color: black;
+    margin: 10px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#navigation div:hover {
+    cursor: pointer;
+    background-color: var(--lightGray);
+    color: black;
+    transition: 0.5s;
+}
+
+#indexBody {
+    background-image: url(img/backgroundIndex.jpg);
+    background-size: cover;
 }
