@@ -23,12 +23,20 @@ body, html {
     margin: 0;
 }
 
+body {
+    
+}
+
 h1 {
     font-family: "InstrumentSerif";
     font-size: 40px;
     color: white;
     position: absolute;
     left: 10px;
+}
+
+a {
+    text-decoration: none;
 }
 
 #header {
@@ -48,6 +56,8 @@ h1 {
     top: 10%;
     height: 100%;
     z-index: 1;
+    background: #383434;
+    background: linear-gradient(90deg,rgba(56, 52, 52, 1) 0%, rgb(103, 96, 96) 100%);
 }
 
 #navigation div {
