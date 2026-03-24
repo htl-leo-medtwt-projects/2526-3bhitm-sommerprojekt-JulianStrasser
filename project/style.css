@@ -24,7 +24,7 @@ body, html {
 }
 
 body {
-    
+    background-color: var(--midGray);
 }
 
 h1 {
@@ -78,4 +78,36 @@ a {
 #indexBody {
     background-image: url(img/backgroundIndex.jpg);
     background-size: cover;
+}
+
+#overview {
+    position: absolute;
+    width: 80vw;
+    height: 90vh;
+    bottom: 0;
+    right: 0;
+}
+
+
+@keyframes grow {
+    
+}
+
+.ovBox {
+    background-color: var(--lightGray);
+    width: 15vw;
+    height: 30vh;
+    position: relative;
+    top: 1cm;
+    border-radius: 15px;
+}
+
+#addBox {
+
+}
+
+#addBox img {
+    width: 10vw;
+    position: relative;
+    left: auto;
 }
