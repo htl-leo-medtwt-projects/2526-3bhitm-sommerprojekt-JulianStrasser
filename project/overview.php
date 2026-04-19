@@ -2,6 +2,7 @@
 
 
 
+
 ?>
 
 
@@ -25,7 +26,10 @@
     </div>
 
     <div id="overview">
-        <div id="addBox" class="ovBox"><img src="img/plus.png" alt="plus.png"></div>
+        <div id="addBox" class="ovBox">
+            <img src="img/plus.png" alt="plus.png">
+            <p>Add movie</p>
+        </div>
     </div>
 </body>
 </html>

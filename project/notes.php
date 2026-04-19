@@ -17,6 +17,16 @@
         <a href="notes.php"><div>Notes</div></a> 
     </div>
 
+    <div id="movieBox">
+        <h1>Movie XY</h1>
+    </div>
+
+    <div id="notes">
+        <div class="timestamp">Note 1</div>
+        <div class="timestamp">Note 2</div>
+        <div class="timestamp">Note 3</div>
+        <div class="timestamp">Note 4</div>
+    </div>
 
 </body>
 </html>

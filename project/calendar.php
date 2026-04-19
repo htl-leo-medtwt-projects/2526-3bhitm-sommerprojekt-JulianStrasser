@@ -17,6 +17,99 @@
         <a href="notes.php"><div>Notes</div></a> 
     </div>
 
+    <div id="calendar">
+        <div class="calendarBox">
+            <p>1</p>
+        </div>
+        <div class="calendarBox">
+            <p>2</p>
+        </div>
+        <div class="calendarBox">
+            <p>3</p>
+        </div>
+        <div class="calendarBox">
+            <p>4</p>
+        </div>
+        <div class="calendarBox">
+            <p>5</p>
+        </div>
+        <div class="calendarBox">
+            <p>6</p>
+        </div>
+        <div class="calendarBox">
+            <p>7</p>
+        </div>
+        <div class="calendarBox">
+            <p>8</p>
+        </div>
+        <div class="calendarBox">
+            <p>9</p>
+        </div>
+        <div class="calendarBox">
+            <p>10</p>
+        </div>
+        <div class="calendarBox">
+            <p>11</p>
+        </div>
+        <div class="calendarBox">
+            <p>12</p>
+        </div>
+        <div class="calendarBox">
+            <p>13</p>
+        </div>
+        <div class="calendarBox">
+            <p>14</p>
+        </div>
+        <div class="calendarBox">
+            <p>15</p>
+        </div>
+        <div class="calendarBox">
+            <p>16</p>
+        </div>
+        <div class="calendarBox">
+            <p>17</p>
+        </div>
+        <div class="calendarBox">
+            <p>18</p>
+        </div>
+        <div class="calendarBox">
+            <p>19</p>
+        </div>
+        <div class="calendarBox">
+            <p>20</p>
+        </div>
+        <div class="calendarBox">
+            <p>21</p>
+        </div>
+        <div class="calendarBox">
+            <p>22</p>
+        </div>
+        <div class="calendarBox">
+            <p>23</p>
+        </div>
+        <div class="calendarBox">
+            <p>24</p>
+        </div>
+        <div class="calendarBox">
+            <p>25</p>
+        </div>
+        <div class="calendarBox">
+            <p>26</p>
+        </div>
+        <div class="calendarBox">
+            <p>27</p>
+        </div>
+        <div class="calendarBox">
+            <p>28</p>
+        </div>
+        <div class="calendarBox">
+            <p>29</p>
+        </div>
+        <div class="calendarBox">
+            <p>30</p>
+        </div>
+    </div>
+
 
 </body>
 </html>

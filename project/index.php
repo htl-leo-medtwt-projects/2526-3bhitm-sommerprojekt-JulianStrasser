@@ -8,7 +8,10 @@
 <body id="indexBody">
     <div id="header">
         <h1>MovieNote</h1>
+        <div class="button1">Register</div>
+        <div class="button1">Login</div>
     </div>
+
     
     <div id="navigation">
         <a href="index.php"><div>Start</div></a>
