@@ -17,7 +17,6 @@
 
 * {
     font-family: "Jaldi";
-    color: white;
 }
 
 body, html {
@@ -87,7 +86,7 @@ a {
 }
 
 #indexBody {
-    background-image: url(img/backgroundIndex.jpg);
+    background-image: url(img/slideshow/img1.webp);
     background-size: cover;
 }
 
@@ -100,6 +99,7 @@ a {
     background: #000085;
     background: linear-gradient(45deg,rgba(0, 0, 133, 1) 0%, rgba(148, 148, 212, 1) 100%);
     padding-left: 7cm;
+    display: flex;
 }
 
 @keyframes grow {
@@ -123,6 +123,9 @@ a {
     position: relative;
     top: 1cm;
     border-radius: 15px;
+    color: black;
+    margin-right: 10px;
+    padding: 30px;
 }
 
 #addBox {
@@ -133,6 +136,7 @@ a {
 #addBox p {
     position: relative;
     top: 1.5cm;
+    
 }
 
 #addBox img {
@@ -160,31 +164,87 @@ a {
 #movieBox {
     position: relative;
     width: 400px;
-    height: 500px;
-    background-color: var(--darkGray);
+    height: auto;
+    min-height: 500px;
+    background-color: var(--lightGray);
     left: 6cm;
     top: 3cm;
-}
-
-#movieBox h1 {
+    color: black;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-.timestamp {
-    width: 600px;
-    height: 100px;
-    background-color: var(--lightGray);
+#movieBox h1 {
+    font-family: "InstrumentSerif";
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--darkGray);
+}
+
+#movieBox p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: var(--brownishGray);
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.slider-btn {
+    background-color: var(--darkGray);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+    background-color: var(--brownishGray);
+}
+
+.slider-indicator {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--darkGray);
 }
 
 #notes {
     display: grid;
     grid-template-columns: auto;
-    gap: 10px;
+    gap: 15px;
     position: relative;
     left: 18cm;
     bottom: 9cm;
     font-size: 20px;
     text-align: center;
+    width: 600px;
+}
+
+.timestamp {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    background-color: var(--lightGray);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--darkGray);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .calendarBox {
@@ -225,3 +285,63 @@ a {
     transition: 1s;
     cursor: pointer;
 }
+
+#lock {
+    height: 30px;
+    margin-left: 30px;
+    opacity: 1;
+}
+
+#notesNavBox {
+    display: flex;
+    flex-direction: row;
+    opacity: 0.5;
+}
+
+#addMovieFormContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--darkGray);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+#addMovieForm {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#addMovieForm input[type="text"],
+#addMovieForm input[type="date"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid var(--midGray);
+    border-radius: 5px;
+    background-color: var(--lightGray);
+    color: black;
+}
+
+#addMovieForm input[type="checkbox"] {
+    margin-bottom: 10px;
+}
+
+#addMovieForm input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--lightGray);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addMovieForm input[type="submit"]:hover {
+    background-color: var(--midGray);
+}
+

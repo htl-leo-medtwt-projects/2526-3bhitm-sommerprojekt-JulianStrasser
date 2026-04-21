@@ -1,9 +1,33 @@
+
+
+<?php
+
+$conn = new mysqli("db_server", "root", "rootpassword", "MovieNote");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$result = $conn->query("SELECT * FROM Movie");
+$movies = [];
+while ($row = $result->fetch_assoc()) {
+    $movies[] = $row;
+}
+
+$current = isset($_GET['movie']) ? (int)$_GET['movie'] : 0;
+if ($current < 0) $current = 0;
+if ($current >= count($movies)) $current = count($movies) - 1;
+$movie = $movies[$current] ?? null;
+
+?>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieNote - Notes</title>
     <link rel="stylesheet" href="style.css">
+    <script src="Javascript/script.js" defer></script>
 </head>
 <body id="notesBody">
     <div id="header">
@@ -18,15 +42,27 @@
     </div>
 
     <div id="movieBox">
-        <h1>Movie XY</h1>
+        <?php if ($movie): ?>
+            <h1><?php echo htmlspecialchars($movie['title']); ?></h1>
+            <p>Release Date: <?php echo htmlspecialchars($movie['release_date']); ?></p>
+            <p>Already Watched: <?php echo $movie['already_watched'] ? 'Yes' : 'No'; ?></p>
+            <?php if ($movie['already_watched'] && $movie['watched_date']): ?>
+                <p>Watched Date: <?php echo htmlspecialchars($movie['watched_date']); ?></p>
+            <?php endif; ?>
+            <div class="slider-controls">
+                <?php if ($current > 0): ?>
+                    <a href="?movie=<?php echo $current - 1; ?>" class="slider-btn">Previous</a>
+                <?php endif; ?>
+                <span class="slider-indicator"><?php echo $current + 1; ?> / <?php echo count($movies); ?></span>
+                <?php if ($current < count($movies) - 1): ?>
+                    <a href="?movie=<?php echo $current + 1; ?>" class="slider-btn">Next</a>
+                <?php endif; ?>
+            </div>
+        <?php else: ?>
+            <h1>No movies available</h1>
+        <?php endif; ?>
     </div>
 
-    <div id="notes">
-        <div class="timestamp">Note 1</div>
-        <div class="timestamp">Note 2</div>
-        <div class="timestamp">Note 3</div>
-        <div class="timestamp">Note 4</div>
-    </div>
 
 </body>
 </html>
