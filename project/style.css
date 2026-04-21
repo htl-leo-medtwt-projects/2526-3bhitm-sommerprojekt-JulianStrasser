@@ -99,7 +99,8 @@ a {
     background: #000085;
     background: linear-gradient(45deg,rgba(0, 0, 133, 1) 0%, rgba(148, 148, 212, 1) 100%);
     padding-left: 7cm;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
 
 @keyframes grow {

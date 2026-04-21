@@ -13,7 +13,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Generate a unique movie_id
     $max_id_result = $conn->query("SELECT MAX(movie_id) FROM Movie");
-    $max_id = $max_id_result->fetch_row()[0] ?? 0;
+    $row = $max_id_result->fetch_row();
+    if ($row !== null) {
+        $max_id = $row[0];
+    } else {
+        $max_id = 0;
+    }
     $movie_id = $max_id + 1;
     
     $stmt = $conn->prepare("INSERT INTO Movie (movie_id, title, release_date, already_watched, watched_date) VALUES (?, ?, ?, ?, ?)");

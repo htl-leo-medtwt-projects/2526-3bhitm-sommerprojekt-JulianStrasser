@@ -13,10 +13,19 @@ while ($row = $result->fetch_assoc()) {
     $movies[] = $row;
 }
 
-$current = isset($_GET['movie']) ? (int)$_GET['movie'] : 0;
+if (isset($_GET['movie'])) {
+    $current = (int)$_GET['movie'];
+} else {
+    $current = 0;
+}
+
 if ($current < 0) $current = 0;
 if ($current >= count($movies)) $current = count($movies) - 1;
-$movie = $movies[$current] ?? null;
+if (isset($movies[$current])) {
+    $movie = $movies[$current];
+} else {
+    $movie = null;
+}
 
 ?>
 

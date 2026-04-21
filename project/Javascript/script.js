@@ -1,5 +1,5 @@
 function slideshow() {
-    let SLIDESHOW_SIZE = 3;
+    let SLIDESHOW_SIZE = 5;
     let indexBody = document.getElementById("indexBody");
     let k = 2;
 
