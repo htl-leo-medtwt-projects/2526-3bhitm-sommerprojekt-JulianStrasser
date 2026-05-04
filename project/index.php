@@ -29,6 +29,12 @@
     </div>
 
 
+   <div id="introduction">
+        <span id="intrTitle">All your movies in one place</span>
+        <p>MovieNote is a website where you can mange all the movies you have watched. To unlock all features please consider creating an account. To do this, please click on the "register" button.</p>
+   </div>
+
+
 
     
 

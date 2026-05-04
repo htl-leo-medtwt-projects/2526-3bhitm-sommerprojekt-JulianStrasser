@@ -19,22 +19,25 @@
 
     <div id="calendar">
         <div class="calendarBox">
-            <p>1</p>
+            <p>MON</p>
         </div>
         <div class="calendarBox">
-            <p>2</p>
+            <p>TUE</p>
         </div>
         <div class="calendarBox">
-            <p>3</p>
+            <p>WED</p>
         </div>
         <div class="calendarBox">
-            <p>4</p>
+            <p>THU</p>
         </div>
         <div class="calendarBox">
-            <p>5</p>
+            <p>FRI</p>
         </div>
         <div class="calendarBox">
-            <p>6</p>
+            <p>SAT</p>
+        </div>
+        <div class="calendarBox">
+            <p>SUN</p>
         </div>
         <div class="calendarBox">
             <p>7</p>
@@ -109,6 +112,9 @@
             <p>30</p>
         </div>
     </div>
+
+
+    
 
 
 </body>

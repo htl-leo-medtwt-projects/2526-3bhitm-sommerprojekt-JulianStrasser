@@ -173,7 +173,6 @@ a {
     color: black;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,33 +191,6 @@ a {
     margin: 10px 0;
     font-size: 16px;
     color: var(--brownishGray);
-}
-
-.slider-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.slider-btn {
-    background-color: var(--darkGray);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.slider-btn:hover {
-    background-color: var(--brownishGray);
-}
-
-.slider-indicator {
-    font-weight: bold;
-    font-size: 18px;
-    color: var(--darkGray);
 }
 
 #notes {
@@ -299,50 +271,52 @@ a {
     opacity: 0.5;
 }
 
-#addMovieFormContainer {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--darkGray);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 10;
-}
-
 #addMovieForm {
-    display: flex;
-    flex-direction: column;
+    background-color: var(--lightGray);
+    position: relative;
+    margin: 0 auto;
+    width: 20vw;
+    top: 10vw;
+    padding: 20px;
+}
+
+@keyframes slideInOut {
+    50% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+.msg {
+    opacity: 0;
+    animation: slideInOut 2s;
+    position: relative;
+    margin: 0 auto;
+    top: 10cm;
+    z-index:  1000;
+    text-align: center;
+    width: 20vw;
+    height: 12.5vh;
+    border-radius: 45px;
+    font-size: 20px;
+    padding-top: 50px;
+}
+
+#introduction {
+    position: relative;
+    top: 20vh;
+    width: 40vw;
+    left: 15vw;
     color: white;
+    
 }
 
-#addMovieForm input[type="text"],
-#addMovieForm input[type="date"] {
-    margin-bottom: 10px;
-    padding: 5px;
-    border: 1px solid var(--midGray);
-    border-radius: 5px;
-    background-color: var(--lightGray);
-    color: black;
+#intrTitle {
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
 }
-
-#addMovieForm input[type="checkbox"] {
-    margin-bottom: 10px;
-}
-
-#addMovieForm input[type="submit"] {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: var(--lightGray);
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#addMovieForm input[type="submit"]:hover {
-    background-color: var(--midGray);
-}
-

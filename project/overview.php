@@ -1,39 +1,3 @@
-<?php
-
-$conn = new mysqli("db_server", "root", "rootpassword", "MovieNote");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = $_POST['title'];
-    $release_date = $_POST['releaseDate'];
-    $already_watched = isset($_POST['alreadyWatched']) ? 1 : 0;
-    $watched_date = $_POST['watchedDate'];
-    
-    // Generate a unique movie_id
-    $max_id_result = $conn->query("SELECT MAX(movie_id) FROM Movie");
-    $row = $max_id_result->fetch_row();
-    if ($row !== null) {
-        $max_id = $row[0];
-    } else {
-        $max_id = 0;
-    }
-    $movie_id = $max_id + 1;
-    
-    $stmt = $conn->prepare("INSERT INTO Movie (movie_id, title, release_date, already_watched, watched_date) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("issis", $movie_id, $title, $release_date, $already_watched, $watched_date);
-    $stmt->execute();
-    $stmt->close();
-    // Redirect to avoid resubmission
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit();
-}
-
-$result = $conn->query("SELECT * FROM Movie"); 
-
-?>
-
 
 <html lang="en">
 <head>
@@ -60,20 +24,36 @@ $result = $conn->query("SELECT * FROM Movie");
         <div id="addBox" class="ovBox" onclick="printMovieAddForm()">
             <img src="img/plus.png" alt="plus.png">
             <p>Add movie</p>
-        </div>
-        <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<div class='ovBox movieBox'>";
-                echo "<h3>" . htmlspecialchars($row['title']) . "</h3>";
-                echo "<p>Release Date: " . htmlspecialchars($row['release_date']) . "</p>";
-                echo "<p>Already Watched: " . ($row['already_watched'] ? 'Yes' : 'No') . "</p>";
-                if ($row['already_watched'] && $row['watched_date']) {
-                    echo "<p>Watched Date: " . htmlspecialchars($row['watched_date']) . "</p>";
-                }
-                echo "</div>";
-            }
+        </div>  
+        <?php 
+
+        $_db_host = "db_server";
+        $_db_username = "web";
+        $_db_password = "database-password";
+        $_db_datenbank = "web";
+
+        $conn = new mysqli(
+            $_db_host,
+            $_db_username,
+            $_db_password,
+            $_db_datenbank
+        );
+
+        if ($conn->connect_error) {
+            die("Connection to database failed: " . $conn->connect_error);
         }
+
+        $request = "SELECT * FROM Movie";
+        $result = $conn->query($request);   
+        
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="ovBox">';
+            echo '<h3>' . $row["title"] . '</h3>';
+            echo '</div>';
+        }
+
+
+        
         ?>
     </div>
 </body>

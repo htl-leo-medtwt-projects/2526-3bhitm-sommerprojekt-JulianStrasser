@@ -18,22 +18,27 @@ function slideshow() {
 
 function printMovieAddForm() {
     document.body.innerHTML += `
-            <div id="addMovieFormContainer">
-                <form method="post" id="addMovieForm">
-                    <h2>Add information about the movie/series</h2>
-                    <p>Title: </p>
-                    <input type="text" name="title" id="title" required>
-                    <p>Release Date: </p>
-                    <input type="date" name="releaseDate" id="releaseDate" required>
-                    <p>Already Watched: </p>
-                    <input type="checkbox" name="alreadyWatched" id="alreadyWatched">
-                    <p>Watch Date: </p>
-                    <input type="date" name="watchedDate" id="watchedDate">
-                    <br><br>
-                    <input type="submit" value="Add Movie">
-                </form>
-            </div>
-    `
+    <form id="addMovieForm" method="POST" action="addMovie.php">
+        <div class="optionContainer">
+            <p>Title of movie</p>
+            <input type="text" name="title" id="title" required>
+        </div>
+        <div class="optionContainer">
+            <p>Already watched</p>
+            <input type="checkbox" name="alreadyWatched" id="alreadyWatched" required>
+        </div>
+        <div class="optionContainer">
+            <p>Date released</p>
+            <input type="date" name="releasedDate" id="releasedDate" required>
+        </div>
+        <div class="optionContainer">
+            <p>Date watched</p>
+            <input type="date" name="watchedDate" id="watchedDate" required>
+        </div>
+        <input type="submit" value="Add Movie" name="submit">
+</form>
+    `;
 }
+
 
 slideshow();
